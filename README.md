@@ -9,7 +9,7 @@ example:  [3,5,3,6,7,5] would have potential pairs:  (0,2) (1,5) (2,0) (5,1)
 
 Those pairs were then further refuned as follows:  0 <= P < Q < N
 
-Where P was the first elenet, Q was the 2nd element, and N was the length of the array
+Where P was the first element, Q was the 2nd element, and N was the length of the array
 
 So, from the example, the "valid pairs" would be: (0,2) (1,5)
 
