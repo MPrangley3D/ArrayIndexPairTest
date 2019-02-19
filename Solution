@@ -1,0 +1,46 @@
+    class Solution
+    {
+        public int solution(int[] A)
+        {
+            Dictionary<int, HashSet<int>> myDatabase = new Dictionary<int, HashSet<int>>();
+            List<int> cache = new List<int>();
+            int N = A.Count();
+
+            for (int i = 0; i < N; i++)
+            {
+                Console.WriteLine("loop " + i + " adding " + A[i]); 
+                //If the key already exists, don't recreate it just access and add value to HashSet
+                if (myDatabase.ContainsKey(A[i]))
+                {
+                    Console.WriteLine("Contains " + A[i]);
+                    myDatabase[A[i]].Add(i);
+                }
+                //Else create and add value
+                else
+                {
+                    myDatabase.Add(A[i], new HashSet<int>());
+                    myDatabase[A[i]].Add(i);
+                    cache.Add(A[i]);
+                }
+            }
+
+            //Run the Math on the Pairs
+            int counter = 0;
+            foreach (int i in cache)
+            {
+                foreach (int P in myDatabase[i])
+                {
+                    int instances = myDatabase[i].Count();
+                    for (int Q = instances; Q > 0; Q--)
+                    {
+                        if (0 <= P && P < Q && Q < N)
+                        {
+                            counter++;
+                        }
+                    }
+                }
+            }
+
+            return counter;
+        }
+    }
