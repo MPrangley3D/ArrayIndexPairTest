@@ -1,0 +1,32 @@
+//On listening to this talk: https://www.youtube.com/watch?v=WDIkqP4JbkE&feature=youtu.be
+//and discussing data structures with some communities I decided to revisit this
+//
+//I overlooked a super elegant and simple solution that executes about 23 times as quickly.
+
+
+class newSolution
+{
+    public int Input(int[] input)
+    {
+        int N = input.Count();
+        int counter = 0;
+
+        for(int Q = 0; Q < N; Q++)
+        {
+            for(int P = 0; P < Q; P++)
+            {
+                if(input[Q] == input[P])
+                {
+                    counter++;
+                }
+            }
+        }
+        return counter;
+    }
+}
+
+
+//I was so eager to implement a hash table...
+//I completely overlooked the fact that caching the information was not necessary AT ALL
+
+//Lesson learned.  The time-honored:  "Keep it simple, stupid."
