@@ -30,8 +30,7 @@
             {
                 foreach (int P in myDatabase[i])
                 {
-                    int instances = myDatabase[i].Count();
-                    for (int Q = instances; Q > 0; Q--)
+                    foreach (int Q in myDatabase[i])
                     {
                         if (0 <= P && P < Q && Q < N)
                         {
