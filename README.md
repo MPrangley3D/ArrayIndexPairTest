@@ -30,3 +30,7 @@ Then additionally I cached the unique values in the array, to expedite the actua
 Then I looped through that cache of values, and ran the 0 <= P < Q < N check on each pair that was there to clarify which met the criteria
 
 Finally the counter is returned
+
+
+I revisited this, and found the hash tables and that entire super cool dictionary strucutre I built to be completely irrelevant.
+Made a better solution that runs significantly quicker, simply by looping through the arrays and not caching the data at all.
